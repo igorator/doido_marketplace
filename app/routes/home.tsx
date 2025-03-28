@@ -1,13 +1,16 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import type { Route } from './+types/buy';
+import { Buy } from '~/pages/buy';
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: 'DOIDO' },
+    {
+      name: 'DOIDO',
+      content: 'Welcome to DOIDO marketplace!',
+    },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return <Buy />;
 }
