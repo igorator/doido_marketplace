@@ -29,7 +29,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <TonConnectUIProvider manifestUrl=''>
+    <TonConnectUIProvider manifestUrl='https://doido-marketplace.vercel.app/tonconnect-manifest.json'>
       <html lang='en'>
         <head>
           <meta charSet='utf-8' />
