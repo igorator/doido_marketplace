@@ -1,5 +1,5 @@
 import { SellIcon } from './SellIcon';
 import { BuyIcon } from './BuyIcon';
-import { SettingsIcon } from './StatisticsIcon';
+import { ActivityIcon } from './ActivityIcon';
 
-export { SellIcon, BuyIcon, SettingsIcon };
+export { SellIcon, BuyIcon, ActivityIcon };
