@@ -10,7 +10,6 @@ import {
 import type { Route } from './+types/root';
 import './app.css';
 import { Navbar } from './shared/components/Navbar';
-import { PageWrapper } from './shared/components/PageWrapper';
 
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
@@ -34,14 +33,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <head>
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <script src='https://telegram.org/js/telegram-web-app.js?56'></script>
           <Meta />
           <Links />
         </head>
         <body>
-          <PageWrapper>
-            {children}
-            <Navbar />
-          </PageWrapper>
+          {children}
+          <Navbar />
           <ScrollRestoration />
           <Scripts />
         </body>
