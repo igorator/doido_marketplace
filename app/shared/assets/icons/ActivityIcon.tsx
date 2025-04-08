@@ -1,4 +1,4 @@
-export const ActivityIcon = ({ size = 20 }) => (
+export const ActivityIcon = ({ size = 24 }) => (
   <svg
     width={size}
     height={size}

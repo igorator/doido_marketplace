@@ -2,20 +2,52 @@
 
 @layer theme {
   :root {
+    /* Шрифты */
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif,
       'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
       'Noto Color Emoji';
 
-    --color-scheme: var(--tg-color-scheme);
-    --viewport-height: var(--tg-viewport-height);
-    --viewport-stable-height: var(--tg-viewport-stable-height);
-    --theme-bg: var(--tg-theme-bg-color);
-    --theme-text: var(--tg-theme-text-color);
-    --theme-link: var(--tg-theme-link-color);
-    --theme-navbar: var(--tg-theme-bottom-bar-bg-color);
+    /* Цветовая схема */
+    --color-scheme: var(--tg-color-scheme, dark);
 
+    /* Размеры */
+    --viewport-height: var(--tg-viewport-height, 100vh);
+    --viewport-stable-height: var(--tg-viewport-stable-height, 100vh);
+
+    /* Цвета */
+    --theme-bg: var(--tg-theme-bg-color, #ffffff);
+    --theme-text: var(--tg-theme-text-color, #000000);
+    --theme-link: var(--tg-theme-link-color, #1a73e8);
+    --theme-navbar: var(--tg-theme-bottom-bar-bg-color, #f3f3f3);
+    --theme-button-bg: var(--tg-theme-button-bg-color, #e4e6eb);
+    --theme-button-text: var(--tg-theme-button-text-color, #000000);
+    --theme-header-bg: var(--tg-theme-header-bg-color, #f7f7f8);
+    --theme-header-text: var(--tg-theme-header-text-color, #1a1b1f);
+    --theme-accent-bg: var(--tg-theme-accent-bg-color, #f1f1f1);
+    --theme-accent-text: var(--tg-theme-accent-text-color, #1a73e8);
+
+    /* Размеры для макс. ширины и шрифта */
     --default-max-width: 500px;
     --default-font-size: 16px;
+
+    /* Прочие переменные */
+    --theme-primary-button-bg: var(--tg-theme-primary-button-bg-color, #007bff);
+    --theme-primary-button-text: var(
+      --tg-theme-primary-button-text-color,
+      #ffffff
+    );
+    --theme-secondary-button-bg: var(
+      --tg-theme-secondary-button-bg-color,
+      #6c757d
+    );
+    --theme-secondary-button-text: var(
+      --tg-theme-secondary-button-text-color,
+      #ffffff
+    );
+    --theme-input-bg: var(--tg-theme-input-bg-color, #ffffff);
+    --theme-input-text: var(--tg-theme-input-text-color, #000000);
+    --theme-placeholder-text: var(--tg-theme-placeholder-text-color, #6c757d);
+    --theme-border-color: var(--tg-theme-border-color, #ccc);
   }
 }
 
@@ -24,4 +56,5 @@ body {
   background-color: var(--theme-bg);
   color: var(--theme-text);
   color-scheme: var(--color-scheme);
+  font-family: var(--font-sans);
 }

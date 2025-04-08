@@ -2,17 +2,17 @@ import { SellIcon, BuyIcon, ActivityIcon } from '../assets/icons';
 
 export const navigationConfig = {
   buy: {
-    icon: <BuyIcon size={30} />,
+    icon: <BuyIcon />,
     path: '/',
     title: 'Buy',
   },
   sell: {
-    icon: <SellIcon size={30} />,
+    icon: <SellIcon />,
     path: 'sell',
     title: 'Sell',
   },
   settings: {
-    icon: <ActivityIcon size={30} />,
+    icon: <ActivityIcon />,
     path: 'activity',
     title: 'Activity',
   },

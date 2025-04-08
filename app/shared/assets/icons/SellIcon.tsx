@@ -1,4 +1,4 @@
-export const SellIcon = ({ size = 20 }) => (
+export const SellIcon = ({ size = 24 }) => (
   <svg
     width={size}
     height={size}
