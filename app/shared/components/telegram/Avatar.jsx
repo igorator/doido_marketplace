@@ -2,17 +2,18 @@ import { useEffect, useState } from 'react';
 
 import avatarPlaceholder from '../../../shared/assets/images/avatar-placeholder.webp';
 import { cn } from '../../utils/cn';
+import { rawDataToObject } from '~/shared/utils/rawDataToObject';
 
 export const Avatar = () => {
   const [avatarUrl, setAvatarUrl] = useState(null);
 
   useEffect(() => {
     if (window.Telegram.WebApp) {
-      const telegramWebApp = window.Telegram.WebApp;
+      const userData = window.Telegram.WebApp.initData;
+      const userObject = rawDataToObject(userData);
 
-      console.log('TelegramWebApp:', telegramWebApp.initData);
-
-      const user = telegramWebApp.initData?.WebAppUser;
+      console.log('userData:', userData);
+      console.log('userObject:', userObject);
 
       if (user && user.photo_url) {
         setAvatarUrl(user.photo_url);
