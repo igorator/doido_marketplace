@@ -10,7 +10,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   menuConfig = navigationConfig,
 }) => {
   return (
-    <nav className='bottom-0 fixed flex justify-center gap-[var(--theme-inner-gap)] bg-[var(--theme-navbar)] rounded-t-[var(--theme-outer-border-radius)] w-full max-w-[var(--theme-default-max-width)]'>
+    <nav className='bottom-0 fixed flex justify-center gap-[var(--theme-inner-gap)] bg-[var(--theme-secondary-bg-color)] rounded-t-[var(--theme-outer-border-radius)] w-full max-w-[var(--theme-default-max-width)]'>
       {Object.entries(menuConfig).map(([key, item]) => (
         <NavLink
           key={key}
@@ -27,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           <div>{item.icon}</div>
 
-          <span>{item.title}</span>
+          <span className='font-semibold'>{item.title}</span>
         </NavLink>
       ))}
     </nav>
