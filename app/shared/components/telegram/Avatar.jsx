@@ -8,9 +8,9 @@ export const Avatar = () => {
 
   useEffect(() => {
     if (window.TelegramWebApp) {
-      const telegramWebApp = window.TelegramWebApp;
+      const telegramWebApp = window.Telegram.WebApp;
 
-      telegramWebApp.init();
+      console.log('TelegramWebApp:', telegramWebApp);
 
       const user = telegramWebApp.initData?.user;
 
