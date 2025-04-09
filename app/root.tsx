@@ -9,9 +9,14 @@ import {
 
 import type { Route } from './+types/root';
 import './app.css';
-import { Navbar } from './shared/components/Navbar';
 
-import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import { TonConnectButton, TonConnectUIProvider } from '@tonconnect/ui-react';
+import { Navbar } from './shared/components/Navbar';
+import { LoadingScreen } from './shared/components/LoadingScreen';
+import { ControlsWrapper } from './shared/components/wrappers/ControlsWrapper';
+import { PageWrapper } from './shared/components/wrappers/PageWrapper';
+import { FilterBar } from './shared/components/FilterBar';
+import { Avatar } from './shared/components/telegram/Avatar';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -28,28 +33,43 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <TonConnectUIProvider manifestUrl='https://doido-marketplace.vercel.app/tonconnect-manifest.json'>
-      <html lang='en'>
-        <head>
-          <meta charSet='utf-8' />
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
-          <script src='https://telegram.org/js/telegram-web-app.js?56'></script>
-          <Meta />
-          <Links />
-        </head>
-        <body>
-          {children}
-          <Navbar />
-          <ScrollRestoration />
-          <Scripts />
-        </body>
-      </html>
-    </TonConnectUIProvider>
+    <html lang='en' suppressHydrationWarning>
+      <head>
+        <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <script src='https://telegram.org/js/telegram-web-app.js?56'></script>
+        <Meta />
+        <Links />
+      </head>
+      <body className='flex flex-col items-stretch'>
+        {children}
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
   );
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <TonConnectUIProvider manifestUrl='https://doido-marketplace.vercel.app/tonconnect-manifest.json'>
+      <PageWrapper>
+        <ControlsWrapper className='bg-transparent px-0 py-0'>
+          <TonConnectButton />
+          <Avatar />
+        </ControlsWrapper>
+        <ControlsWrapper>
+          <FilterBar />
+        </ControlsWrapper>
+        <Outlet />
+        <Navbar />
+      </PageWrapper>
+    </TonConnectUIProvider>
+  );
+}
+
+export function HydrateFallback() {
+  return <LoadingScreen />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
@@ -69,7 +89,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className='mx-auto p-4 pt-16 container'>
+    <main className='flex flex-col justify-center items-center gap-4 mx-auto p-4 pt-16 text-center container'>
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (
