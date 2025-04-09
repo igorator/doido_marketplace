@@ -10,9 +10,9 @@ export const Avatar = () => {
     if (window.Telegram.WebApp) {
       const telegramWebApp = window.Telegram.WebApp;
 
-      console.log('TelegramWebApp:', telegramWebApp);
+      console.log('TelegramWebApp:', telegramWebApp.initData);
 
-      const user = telegramWebApp.initData?.user;
+      const user = telegramWebApp.initData?.WebAppUser;
 
       if (user && user.photo_url) {
         setAvatarUrl(user.photo_url);
