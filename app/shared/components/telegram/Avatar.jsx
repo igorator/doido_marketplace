@@ -10,10 +10,7 @@ export const Avatar = () => {
   useEffect(() => {
     if (window.Telegram.WebApp) {
       const userData = window.Telegram.WebApp.initData;
-      const userObject = rawDataToObject(userData);
-
-      console.log('userData:', userData);
-      console.log('userObject:', userObject);
+      const user = rawDataToObject(userData);
 
       if (user && user.photo_url) {
         setAvatarUrl(user.photo_url);
