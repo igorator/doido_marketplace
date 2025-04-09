@@ -7,7 +7,7 @@ export const Avatar = () => {
   const [avatarUrl, setAvatarUrl] = useState(null);
 
   useEffect(() => {
-    if (window.TelegramWebApp) {
+    if (window.Telegram.WebApp) {
       const telegramWebApp = window.Telegram.WebApp;
 
       console.log('TelegramWebApp:', telegramWebApp);
