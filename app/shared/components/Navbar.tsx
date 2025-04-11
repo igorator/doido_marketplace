@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router';
+import { cn } from '~/shared/lib/utils';
 import { navigationConfig } from '~/shared/config/navigationConfig';
-import { cn } from '~/shared/utils/cn';
 
 interface NavbarProps {
   menuConfig?: typeof navigationConfig;
@@ -13,7 +13,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const basePath = location.pathname.split('/')[1];
 
   return (
-    <nav className='bottom-0 fixed flex justify-center gap-[var(--theme-inner-gap)] bg-[var(--theme-secondary-bg-color)] pb-4 rounded-t-[var(--theme-outer-border-radius)] w-full max-w-[var(--theme-default-max-width)]'>
+    <nav className='bottom-0 fixed flex justify-center gap-[var(--theme-inner-gap)] bg-[var(--theme-secondary-bg-color)] pb-4 w-full max-w-[var(--theme-default-max-width)]'>
       {Object.entries(menuConfig).map(([key, item]) => {
         const fullPath = `/${basePath}/${item.path}`;
 

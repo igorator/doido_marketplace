@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from '~/shared/components/ui/avatar';
+import avatarPlaceholder from '~/shared/assets/images/avatar-placeholder.webp';
+import { rawDataToObject } from '~/shared/lib/utils';
 
-import avatarPlaceholder from '../../../shared/assets/images/avatar-placeholder.webp';
-import { cn } from '../../utils/cn';
-import { rawDataToObject } from '~/shared/utils/rawDataToObject';
-
-export const Avatar = () => {
+export const UserAvatar = () => {
   const [avatarUrl, setAvatarUrl] = useState(null);
 
   useEffect(() => {
@@ -21,10 +24,9 @@ export const Avatar = () => {
   const imageUrl = avatarUrl || avatarPlaceholder;
 
   return (
-    <img
-      src={imageUrl}
-      alt='Avatar'
-      className={cn('rounded-full object-cover', `size-[40px]`)}
-    />
+    <Avatar className='size-12'>
+      <AvatarImage src={imageUrl} />
+      <AvatarFallback>Avatar</AvatarFallback>
+    </Avatar>
   );
 };

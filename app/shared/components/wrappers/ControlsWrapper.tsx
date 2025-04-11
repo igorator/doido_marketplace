@@ -1,4 +1,4 @@
-import { cn } from '~/shared/utils/cn'; // Импорт функции cn
+import { cn } from '~/shared/lib/utils';
 
 export const ControlsWrapper = ({
   children,
@@ -11,7 +11,7 @@ export const ControlsWrapper = ({
   return (
     <div
       className={cn(
-        'flex flex-wrap justify-between items-center gap-1 bg-[var(--theme-secondary-bg-color)] p-4 rounded-[var(--theme-outer-border-radius)] w-full',
+        'flex flex-wrap justify-between gap-1 bg-[var(--theme-secondary-bg-color)] p-4 rounded-[var(--theme-outer-border-radius)] w-full items-center',
         className,
       )}
       {...props}

@@ -1,7 +1,7 @@
-import { cn } from '../utils/cn';
 import { routes } from '~/shared/config/routesConfig';
 import { SoonOverlay } from './SoonOverlay';
 import { NavLink } from 'react-router';
+import { cn } from '~/shared/lib/utils';
 
 const defaultTabs = [
   {
@@ -30,17 +30,17 @@ export const EntityTabSwitcher = ({
   tabsConfig = defaultTabs,
 }: EntityTabSwitcherProps) => {
   return (
-    <nav className='flex items-center self-center rounded-[9999px] w-full overflow-clip'>
+    <nav className='flex items-center self-center w-full overflow-clip'>
       {tabsConfig.map(({ label, to, soon }) => (
         <NavLink
           key={to}
           to={to}
           className={({ isActive, isPending, isTransitioning }) =>
             cn(
-              'flex grow items-center justify-center relative p-[8px] transition-colors duration-200',
+              'flex grow items-center justify-center relative p-[8px] transition-colors duration-200 w-full',
               isPending && 'text-[var(--theme-hint-text)]',
               isActive &&
-                'bg-[var(--theme-accent-bg)] text-[var(--theme-accent-text)]',
+                'bg-[var(--theme-accent-bg)] text-[var(--theme-accent-text)] pointer-events-none',
               isTransitioning && 'opacity-50',
               soon && 'pointer-events-none',
             )
