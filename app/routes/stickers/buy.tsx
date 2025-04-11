@@ -1,9 +1,9 @@
 import type { Route } from './+types/buy';
 
 export function meta({}: Route.MetaArgs) {
-  return [{ title: 'Buy Page' }];
+  return [{ title: 'Buy Stickers' }];
 }
 
-export default function BuyRoute() {
+export default function Buy() {
   return <>Buy</>;
 }

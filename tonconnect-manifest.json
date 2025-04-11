@@ -1,5 +1,7 @@
 {
   "url": "https://doido-marketplace.vercel.app",
   "name": "DOIDO marketplace",
-  "iconUrl": "https://ton.vote/logo.png"
+  "iconUrl": "https://ton.vote/logo.png",
+  "termsUrl": "https://doido-marketplace.vercel.app/terms",
+  "privacyUrl": "https://doido-marketplace.vercel.app/privacy"
 }

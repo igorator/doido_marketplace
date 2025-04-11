@@ -11,12 +11,12 @@ import type { Route } from './+types/root';
 import './app.css';
 
 import { TonConnectButton, TonConnectUIProvider } from '@tonconnect/ui-react';
-import { Navbar } from './shared/components/Navbar';
 import { LoadingScreen } from './shared/components/LoadingScreen';
 import { ControlsWrapper } from './shared/components/wrappers/ControlsWrapper';
 import { PageWrapper } from './shared/components/wrappers/PageWrapper';
-import { FilterBar } from './shared/components/FilterBar';
 import { Avatar } from './shared/components/telegram/Avatar';
+import { EntityTabSwitcher } from './shared/components/EntityTabSwitcher';
+import { Navbar } from './shared/components/Navbar';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -54,12 +54,10 @@ export default function App() {
   return (
     <TonConnectUIProvider manifestUrl='https://doido-marketplace.vercel.app/tonconnect-manifest.json'>
       <PageWrapper>
+        <EntityTabSwitcher />
         <ControlsWrapper className='bg-transparent px-0 py-0'>
           <TonConnectButton />
           <Avatar />
-        </ControlsWrapper>
-        <ControlsWrapper>
-          <FilterBar />
         </ControlsWrapper>
         <Outlet />
         <Navbar />

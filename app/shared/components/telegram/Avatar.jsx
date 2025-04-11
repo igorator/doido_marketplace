@@ -8,7 +8,7 @@ export const Avatar = () => {
   const [avatarUrl, setAvatarUrl] = useState(null);
 
   useEffect(() => {
-    if (window.Telegram.WebApp) {
+    if (window.Telegram.WebApp.initData) {
       const userData = window.Telegram.WebApp.initData;
       const user = rawDataToObject(userData);
 

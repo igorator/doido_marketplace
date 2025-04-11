@@ -1,9 +1,9 @@
 import type { Route } from './+types/activity';
 
 export function meta({}: Route.MetaArgs) {
-  return [{ title: 'Activity' }];
+  return [{ title: 'Gifts Activity' }];
 }
 
-export default function ActivityRoute() {
+export default function Activity() {
   return <>Activity</>;
 }
