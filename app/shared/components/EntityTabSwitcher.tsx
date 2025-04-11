@@ -30,7 +30,7 @@ export const EntityTabSwitcher = ({
   tabsConfig = defaultTabs,
 }: EntityTabSwitcherProps) => {
   return (
-    <nav className='flex items-center self-center w-full overflow-clip'>
+    <nav className='flex items-center self-center w-full max-w-[var(--theme-default-max-width)] overflow-clip'>
       {tabsConfig.map(({ label, to, soon }) => (
         <NavLink
           key={to}

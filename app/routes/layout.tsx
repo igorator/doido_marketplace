@@ -9,17 +9,18 @@ import { PageWrapper } from '~/shared/components/wrappers/PageWrapper';
 
 export default function Layout() {
   return (
-    <>
+    <PageWrapper>
       <EntityTabSwitcher />
-      <PageWrapper>
-        <ControlsWrapper className='bg-transparent px-0 py-0'>
-          <UserAvatar />
-          <TonConnectButton />
+      <ControlsWrapper className='gap-2 bg-transparent px-0 py-0'>
+        <div className='flex items-center gap-2 grow'>
           <TonActionPanel />
-        </ControlsWrapper>
-        <Outlet />
-        <Navbar />
-      </PageWrapper>
-    </>
+          <UserAvatar />
+        </div>
+
+        <TonConnectButton />
+      </ControlsWrapper>
+      <Outlet />
+      <Navbar />
+    </PageWrapper>
   );
 }
