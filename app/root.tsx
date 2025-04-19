@@ -10,13 +10,8 @@ import {
 import type { Route } from './+types/root';
 import './app.css';
 
-import { TonConnectButton, TonConnectUIProvider } from '@tonconnect/ui-react';
+import { TonConnectUIProvider } from '@tonconnect/ui-react';
 import { LoadingScreen } from '~/shared/components/LoadingScreen';
-import { ControlsWrapper } from '~/shared/components/wrappers/ControlsWrapper';
-import { PageWrapper } from '~/shared/components/wrappers/PageWrapper';
-import { UserAvatar } from '~/shared/components/telegram/Avatar';
-import { EntityTabSwitcher } from '~/shared/components/EntityTabSwitcher';
-import { Navbar } from '~/shared/components/Navbar';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

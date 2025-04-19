@@ -12,3 +12,7 @@ export const rawDataToObject = (rawString: string): object => {
 
   return JSON.parse(decodedUserString);
 };
+
+export const formatGiftsRarity = (rarity: number): number => {
+  return parseFloat((rarity / 10).toFixed(1));
+};

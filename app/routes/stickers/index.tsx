@@ -1,8 +1,8 @@
-import { routes } from '~/shared/config/routesConfig';
+import { routes } from '~/shared/config/navigation/routesConfig';
 import { useRedirect } from '~/shared/hooks/useRedirect';
 
-export default function StickersIndex() {
+export default function Index() {
   useRedirect(routes.stickers.buy);
 
-  return <></>;
+  return null;
 }

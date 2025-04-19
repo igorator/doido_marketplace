@@ -13,38 +13,23 @@
     /* Цветовая схема */
     --color-scheme: var(--tg-color-scheme, dark);
 
-    /* Размеры */
-    --viewport-height: var(--tg-viewport-height, 100vh);
-    --viewport-stable-height: var(--tg-viewport-stable-height, 100vh);
-
-    /* Цвета */
+    /* Цвета интерфейса (UI) */
+    --theme-accent-bg: var(--tg-theme-accent-bg-color, #444444);
+    --theme-accent-text: var(--tg-theme-accent-text-color, #1a73e8);
     --theme-bg: var(--tg-theme-bg-color, #2d2d2d);
-    --theme-secondary-bg-color: var(--tg-theme-secondary-bg-color, #363636);
-    --theme-text: var(--tg-theme-text-color, #ffffff);
-    --theme-link: var(--tg-theme-link-color, #1a73e8);
-    --theme-navbar: var(--tg-theme-header-bg-color, #f3f3f3);
+    --theme-border-color: var(--tg-theme-border-color, #ccc);
     --theme-button-bg: var(--tg-theme-button-bg-color, #e4e6eb);
     --theme-button-text: var(--tg-theme-button-text-color, #000000);
     --theme-header-bg: var(--tg-theme-header-bg-color, #f7f7f8);
     --theme-header-text: var(--tg-theme-header-text-color, #1a1b1f);
-    --theme-accent-bg: var(--tg-theme-accent-bg-color, #f1f1f1);
-    --theme-accent-text: var(--tg-theme-accent-text-color, #1a73e8);
-    --theme-hint-text: (var(--tg-theme-hint-color), #6c757d);
-
+    --theme-hint-text: var(--tg-theme-hint-color, #6c757d);
+    --theme-link: var(--tg-theme-link-color, #1a73e8);
+    --theme-navbar: var(--tg-theme-header-bg-color, #f3f3f3);
+    --theme-secondary-bg-color: var(--tg-theme-secondary-bg-color, #212121);
+    --theme-text: var(--tg-theme-text-color, #ffffff);
     --theme-ton-color: #0098ea;
 
-    /* Размеры для макс. ширины и шрифта */
-    --theme-default-max-width: 500px;
-    --theme-outer-border-radius: 8px;
-    --theme-inner-border-radius: 4px;
-
-    --theme-font-size: 12px;
-    --theme-line-height: 1.5;
-
-    --theme-outer-gap: 24px;
-    --theme-inner-gap: 18px;
-
-    /* Прочие переменные */
+    /* Кнопки */
     --theme-primary-button-bg: var(--tg-theme-primary-button-bg-color, #007bff);
     --theme-primary-button-text: var(
       --tg-theme-primary-button-text-color,
@@ -58,10 +43,31 @@
       --tg-theme-secondary-button-text-color,
       #ffffff
     );
+
+    /* Инпуты и плейсхолдер */
     --theme-input-bg: var(--tg-theme-input-bg-color, #ffffff);
     --theme-input-text: var(--tg-theme-input-text-color, #000000);
     --theme-placeholder-text: var(--tg-theme-placeholder-text-color, #6c757d);
-    --theme-border-color: var(--tg-theme-border-color, #ccc);
+
+    /* Размеры */
+    --viewport-height: var(--tg-viewport-height, 100vh);
+    --viewport-stable-height: var(--tg-viewport-stable-height, 100vh);
+
+    /* Радиусы */
+    --theme-inner-border-radius: 4px;
+    --theme-outer-border-radius: 8px;
+    --theme-true-rounded: 9999px;
+
+    /* Типографика */
+    --theme-font-size: 12px;
+    --theme-line-height: 1.5;
+
+    /* Отступы */
+    --theme-inner-gap: 6px;
+    --theme-outer-gap: 24px;
+
+    /* Макеты */
+    --theme-default-max-width: 500px;
   }
 }
 

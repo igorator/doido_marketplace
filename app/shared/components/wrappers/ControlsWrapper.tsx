@@ -11,7 +11,7 @@ export const ControlsWrapper = ({
   return (
     <div
       className={cn(
-        'flex justify-between gap-1 bg-[var(--theme-secondary-bg-color)] p-4 rounded-[var(--theme-outer-border-radius)] w-full items-center',
+        'flex justify-between gap-1 bg-[var(--theme-secondary-bg-color)] p-2 rounded-[var(--theme-outer-border-radius)] w-full items-center',
         className,
       )}
       {...props}

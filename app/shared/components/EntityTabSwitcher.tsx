@@ -1,24 +1,11 @@
-import { routes } from '~/shared/config/routesConfig';
 import { SoonOverlay } from './SoonOverlay';
 import { NavLink } from 'react-router';
 import { cn } from '~/shared/lib/utils';
-
-const defaultTabs = [
-  {
-    label: 'Gifts',
-    to: routes.gifts.path,
-    soon: false,
-  },
-  {
-    label: 'Stickers',
-    to: routes.stickers.path,
-    soon: true,
-  },
-];
+import { entityTabsConfig } from '../config/navigation/navigationConfig';
 
 interface EntityTab {
-  label: string;
-  to: string;
+  title: string;
+  path: string;
   soon?: boolean;
 }
 
@@ -27,14 +14,14 @@ interface EntityTabSwitcherProps {
 }
 
 export const EntityTabSwitcher = ({
-  tabsConfig = defaultTabs,
+  tabsConfig = entityTabsConfig,
 }: EntityTabSwitcherProps) => {
   return (
     <nav className='flex items-center self-center w-full max-w-[var(--theme-default-max-width)] overflow-clip'>
-      {tabsConfig.map(({ label, to, soon }) => (
+      {tabsConfig.map(({ title, path, soon }) => (
         <NavLink
-          key={to}
-          to={to}
+          key={title}
+          to={path}
           className={({ isActive, isPending, isTransitioning }) =>
             cn(
               'flex grow items-center justify-center relative p-[8px] transition-colors duration-200 w-full',
@@ -46,7 +33,7 @@ export const EntityTabSwitcher = ({
             )
           }
         >
-          {label}
+          {title}
           {soon && <SoonOverlay />}
         </NavLink>
       ))}
