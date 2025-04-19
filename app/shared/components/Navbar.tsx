@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router';
-import { cn } from '~/shared/lib/utils';
+import { cn } from '~/shared/lib/utils/utils';
 import type { NavigationItem } from '~/shared/config/navigation/navigationConfig';
 
 interface NavbarProps {

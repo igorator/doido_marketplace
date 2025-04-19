@@ -1,6 +1,6 @@
 import { SoonOverlay } from './SoonOverlay';
 import { NavLink } from 'react-router';
-import { cn } from '~/shared/lib/utils';
+import { cn } from '~/shared/lib/utils/utils';
 import { entityTabsConfig } from '../config/navigation/navigationConfig';
 
 interface EntityTab {

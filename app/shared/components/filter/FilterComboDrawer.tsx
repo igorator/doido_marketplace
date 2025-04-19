@@ -9,7 +9,7 @@ import {
 import { Input } from '~/shared/components/ui/input';
 import { Button } from '~/shared/components/ui/button';
 import { ScrollArea } from '~/shared/components/ui/scroll-area';
-import { cn, formatGiftsRarity } from '~/shared/lib/utils';
+import { cn, formatGiftsRarity } from '~/shared/lib/utils/utils';
 import { LucideSearch, LucideCheckSquare, LucideSquare } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
@@ -235,7 +235,7 @@ const FilterDrawerItem = ({
 
       {rarity !== undefined && (
         <div className='bg-accent p-1 rounded-[var(--theme-true-rounded)] w-full max-w-[50px] text-foreground text-sm text-center'>
-          {formatGiftsRarity(rarity)}%
+          {formatGiftsRarity(rarity)}
         </div>
       )}
     </Button>
@@ -290,9 +290,8 @@ const RarityCheckboxGroup = <T extends SelectableItem>({
           <Button
             key={rarity}
             onClick={toggleRarity}
-            variant='ghost'
             className={cn(
-              'px-3 py-2 text-sm rounded-md flex items-center gap-2 bg-[var(--theme-accent-bg)] grow w-full max-w-[60px]',
+              'px-3 py-2 text-sm rounded-md flex items-center gap-2 bg-[var(--theme-accent-bg)] grow w-full max-w-[60px] ',
               isSelected && 'bg-[var(--theme-accent-bg)] text-white',
             )}
           >
@@ -301,7 +300,7 @@ const RarityCheckboxGroup = <T extends SelectableItem>({
             ) : (
               <LucideSquare className='size-4 text-[var(--theme-accent-text)]' />
             )}
-            {formatGiftsRarity(rarity)}%
+            <span className='grow'>{formatGiftsRarity(rarity)}</span>
           </Button>
         );
       })}

@@ -1,4 +1,4 @@
-import { cn } from '~/shared/lib/utils';
+import { cn } from '~/shared/lib/utils/utils';
 
 export const ControlsWrapper = ({
   children,

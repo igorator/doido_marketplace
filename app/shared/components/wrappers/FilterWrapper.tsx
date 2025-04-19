@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '~/shared/components/ui/button';
-import { cn } from '~/shared/lib/utils';
+import { cn } from '~/shared/lib/utils/utils';
 
 export const FilterBar = ({ children }: { children: React.ReactNode }) => {
   const [expanded, setExpanded] = useState(false);
